@@ -7,7 +7,7 @@ from hoshino import R, Service, priv
 
 sv = Service('uma_voi', enable_on_default=True, visible=False)
    
-#定义牡蛎硬拼路径
+#定义牡蛎路径
 muli_folder = R.get('uma_voi/muli/').path
 def get_muli_folder():
     files = os.listdir(muli_folder)
@@ -270,6 +270,16 @@ async def muli(bot,ev) -> MessageSegment:
     muli_74 = R.get('uma_voi/muli/snd_voi_race_107400_8 -.wav')
     try:
         rec = MessageSegment.record(f'file:///{os.path.abspath(muli_74.path)}')
+        await bot.send(ev,rec)
+    except CQHttpError:
+        sv.logger.erro("发送失败喵")
+
+#语音部分
+@sv.on_fullmatch('牡蛎光明','光明牡蛎')
+async def muli(bot,ev) -> MessageSegment:
+    voi_1001 = R.get('uma_voi/voi/1001特别周')
+    try:
+        rec = MessageSegment.record(f'file:///{os.path.abspath(voi_1001.path)}')
         await bot.send(ev,rec)
     except CQHttpError:
         sv.logger.erro("发送失败喵")
