@@ -278,7 +278,7 @@ async def muli(bot,ev) -> MessageSegment:
 @sv.on_keyword("特别渣", "特别肥", "特别胖", "特别能吃", "小特", "斯佩酱", "斯佩夏尔维特")
 async def muli(bot,ev) -> MessageSegment:
     try:
-        rec = MessageSegment.record(f'file:///{os.path.abspath(get_1001_folder.path)}')
+        rec = MessageSegment.record(f'file:///{os.path.abspath(get_1001_folder().path)}')
         await bot.send(ev,rec)
     except CQHttpError:
         sv.logger.erro("发送失败喵")
