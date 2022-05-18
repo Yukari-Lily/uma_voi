@@ -881,7 +881,7 @@ async def voisend(bot,ev) -> MessageSegment:
     except CQHttpError:
         sv.logger.erro("发送失败喵")
 
-@sv.on_fullmatch("草女士", "那我呢", "今天的小特不是我的对手", "草上飞", "啊草", "那我呢", "阿草")
+@sv.on_fullmatch("草女士", "那我呢", "今天的小特不是我的对手", "草上飞", "啊草", "阿草")
 async def voisend(bot,ev) -> MessageSegment:
     try:
         rec = MessageSegment.record(f'file:///{os.path.abspath(get_1011_folder().path)}')
@@ -993,7 +993,7 @@ async def voisend(bot,ev) -> MessageSegment:
     except CQHttpError:
         sv.logger.erro("发送失败喵")
 
-@sv.on_fullmatch("茶座", "插座", "小仓唯", "xcw", "曼哈顿咖啡", "xcw", "曼城茶座")
+@sv.on_fullmatch("茶座", "插座", "小仓唯", "曼哈顿咖啡", "xcw", "曼城茶座", "XCW")
 async def voisend(bot,ev) -> MessageSegment:
     try:
         rec = MessageSegment.record(f'file:///{os.path.abspath(get_1025_folder().path)}')
@@ -1265,7 +1265,7 @@ async def voisend(bot,ev) -> MessageSegment:
     except CQHttpError:
         sv.logger.erro("发送失败喵")
 
-@sv.on_fullmatch("多伯", "目白多伯", "多勃", "多勃")
+@sv.on_fullmatch("多伯", "目白多伯", "多勃", "多啵")
 async def voisend(bot,ev) -> MessageSegment:
     try:
         rec = MessageSegment.record(f'file:///{os.path.abspath(get_1059_folder().path)}')
