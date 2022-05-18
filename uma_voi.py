@@ -16,11 +16,11 @@ def get_muli_folder():
     return rec
 
 #定义语音路径
-voi_folder = R.get('uma_voi/voi').path
-def get_voi_folder():
+voi_folder = R.get('uma_voi\voi\1001特别周').path
+def get_1001_folder():
     files = os.listdir(voi_folder)
     filename = random.choice(files)
-    rec = R.get('uma_voi/voi',filename)
+    rec = R.get('uma_voi\voi\1001特别周',filename)
     return rec
 
 #牡蛎随机发送
@@ -275,11 +275,11 @@ async def muli(bot,ev) -> MessageSegment:
         sv.logger.erro("发送失败喵")
 
 #语音部分
-@sv.on_fullmatch('牡蛎光明','光明牡蛎')
+@sv.on_keyword("特别渣", "特别肥", "特别胖", "特别能吃", "小特", "斯佩酱", "斯佩夏尔维特")
 async def muli(bot,ev) -> MessageSegment:
-    voi_1001 = R.get('uma_voi/voi/1001特别周')
+    file = get_1001_folder
     try:
-        rec = MessageSegment.record(f'file:///{os.path.abspath(voi_1001.path)}')
+        rec = MessageSegment.record(f'file:///{os.path.abspath(file.path)}')
         await bot.send(ev,rec)
     except CQHttpError:
         sv.logger.erro("发送失败喵")
