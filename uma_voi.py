@@ -23,6 +23,27 @@ def get_1001_folder():
     rec = R.get('uma_voi/voi/1001特别周/',filename)
     return rec
 
+voi_1002_folder = R.get('uma_voi/voi/1002无声铃鹿/').path
+def get_1002_folder():
+    files = os.listdir(voi_1002_folder)
+    filename = random.choice(files)
+    rec = R.get('uma_voi/voi/1002无声铃鹿/',filename)
+    return rec
+
+voi_1003_folder = R.get('uma_voi/voi/1003东海帝王/').path
+def get_1003_folder():
+    files = os.listdir(voi_1003_folder)
+    filename = random.choice(files)
+    rec = R.get('uma_voi/voi/1003东海帝王/',filename)
+    return rec
+
+voi_1004_folder = R.get('uma_voi/voi/1004丸善斯基/').path
+def get_1004_folder():
+    files = os.listdir(voi_1004_folder)
+    filename = random.choice(files)
+    rec = R.get('uma_voi/voi/1004丸善斯基/',filename)
+    return rec
+
 #牡蛎随机发送
 @sv.on_fullmatch('牡蛎')
 async def muli(bot,ev) -> MessageSegment:
