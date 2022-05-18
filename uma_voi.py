@@ -16,11 +16,11 @@ def get_muli_folder():
     return rec
 
 #定义语音路径
-voi_folder = R.get('uma_voi\voi\1001特别周').path
+voi_1001_folder = R.get('uma_voi/voi/1001特别周').path
 def get_1001_folder():
-    files = os.listdir(voi_folder)
+    files = os.listdir(voi_1001_folder)
     filename = random.choice(files)
-    rec = R.get('uma_voi\voi\1001特别周',filename)
+    rec = R.get('uma_voi/voi/1001特别周',filename)
     return rec
 
 #牡蛎随机发送
