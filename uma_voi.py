@@ -7,7 +7,6 @@ from hoshino import R, Service, priv
 
 sv = Service('uma_voi', enable_on_default=True, visible=False)
    
-#定义牡蛎路径
 muli_folder = R.get('uma_voi/muli/').path
 def get_muli_folder():
     files = os.listdir(muli_folder)
@@ -15,7 +14,6 @@ def get_muli_folder():
     rec = R.get('uma_voi/muli',filename)
     return rec
 
-#定义语音路径
 voi_1001_folder = R.get('uma_voi/voi/1001特别周/').path
 def get_1001_folder():
     files = os.listdir(voi_1001_folder)
@@ -800,7 +798,6 @@ async def muli(bot,ev) -> MessageSegment:
     except CQHttpError:
         sv.logger.erro("发送失败喵")
 
-#语音部分
 @sv.on_fullmatch("特别周","特别渣", "特别肥", "特别胖", "特别能吃", "小特", "斯佩酱", "斯佩夏尔维特")
 async def voisend(bot,ev) -> MessageSegment:
     try:
