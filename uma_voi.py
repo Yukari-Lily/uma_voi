@@ -1054,7 +1054,7 @@ async def voisend(bot,ev) -> MessageSegment:
     except CQHttpError:
         sv.logger.erro("发送失败喵")
 
-@sv.on_fullmatch("织姬", "爱慕织姬")
+@sv.on_keyword("织姬", "爱慕织姬")
 async def voisend(bot,ev) -> MessageSegment:
     try:
         rec = MessageSegment.record(f'file:///{os.path.abspath(get_1033_folder().path)}')
