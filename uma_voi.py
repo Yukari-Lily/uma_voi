@@ -6,6 +6,13 @@ from nonebot import MessageSegment
 from hoshino import R, Service, priv
 
 sv = Service('uma_voi', enable_on_default=True, visible=False)
+
+yada_folder = R.get('uma_voi/yada/').path
+def get_yada_folder():
+    files = os.listdir(yada_folder)
+    filename = random.choice(files)
+    rec = R.get('uma_voi/yada',filename)
+    return rec
    
 muli_folder = R.get('uma_voi/muli/').path
 def get_muli_folder():
@@ -545,6 +552,16 @@ def get_2001_folder():
     filename = random.choice(files)
     rec = R.get('uma_voi/voi/2001快乐米可/',filename)
     return rec
+
+#牡蛎随机发送
+@sv.on_keyword('亚达','yada')
+async def yada(bot,ev) -> MessageSegment:
+    file = get_yada_folder()
+    try:
+        rec = MessageSegment.record(f'file:///{os.path.abspath(file.path)}')
+        await bot.send(ev,rec)
+    except CQHttpError:
+        sv.logger.erro("发送失败喵")
 
 
 #牡蛎随机发送
