@@ -638,6 +638,16 @@ async def muli(bot,ev) -> MessageSegment:
     except CQHttpError:
         sv.logger.erro("发送失败喵")
 
+#稻荷一1034
+@sv.on_fullmatch('牡蛎稻荷一','稻荷一牡蛎')
+async def muli(bot,ev) -> MessageSegment:
+    muli_33 = R.get('uma_voi/muli/snd_voi_race_103400_8 -.wav')
+    try:
+        rec = MessageSegment.record(f'file:///{os.path.abspath(muli_33.path)}')
+        await bot.send(ev,rec)
+    except CQHttpError:
+        sv.logger.erro("发送失败喵")
+
 #荣进闪耀1037
 @sv.on_fullmatch('牡蛎阿荣','阿荣牡蛎')
 async def muli(bot,ev) -> MessageSegment:
@@ -652,6 +662,16 @@ async def muli(bot,ev) -> MessageSegment:
 @sv.on_fullmatch('牡蛎川上','川上牡蛎')
 async def muli(bot,ev) -> MessageSegment:
     muli_39 = R.get('uma_voi/muli/snd_voi_race_103900_8 -.wav')
+    try:
+        rec = MessageSegment.record(f'file:///{os.path.abspath(muli_39.path)}')
+        await bot.send(ev,rec)
+    except CQHttpError:
+        sv.logger.erro("发送失败喵")
+
+#东商变革1044
+@sv.on_fullmatch('牡蛎小魔女','小魔女牡蛎')
+async def muli(bot,ev) -> MessageSegment:
+    muli_39 = R.get('uma_voi/muli/snd_voi_race_104400_8 -.wav')
     try:
         rec = MessageSegment.record(f'file:///{os.path.abspath(muli_39.path)}')
         await bot.send(ev,rec)
@@ -734,6 +754,16 @@ async def muli(bot,ev) -> MessageSegment:
     muli_62 = R.get('uma_voi/muli/snd_voi_race_106200_8 -.wav')
     try:
         rec = MessageSegment.record(f'file:///{os.path.abspath(muli_62.path)}')
+        await bot.send(ev,rec)
+    except CQHttpError:
+        sv.logger.erro("发送失败喵")
+
+#目白善信1064
+@sv.on_fullmatch('牡蛎善信','善信牡蛎')
+async def muli(bot,ev) -> MessageSegment:
+    muli_39 = R.get('uma_voi/muli/snd_voi_race_106400_8 -.wav')
+    try:
+        rec = MessageSegment.record(f'file:///{os.path.abspath(muli_39.path)}')
         await bot.send(ev,rec)
     except CQHttpError:
         sv.logger.erro("发送失败喵")
@@ -1142,7 +1172,7 @@ async def voisend(bot,ev) -> MessageSegment:
     except CQHttpError:
         sv.logger.erro("发送失败喵")
 
-@sv.on_keyword("东尚", "东商", "魔女", "小魔女", "东商变革")
+@sv.on_keyword("东尚", "东商", "魔女", "小魔女", "东商变革", "小魔吕", )
 async def voisend(bot,ev) -> MessageSegment:
     try:
         rec = MessageSegment.record(f'file:///{os.path.abspath(get_1044_folder().path)}')
