@@ -553,8 +553,8 @@ def get_2001_folder():
     rec = R.get('uma_voi/voi/2001快乐米可/',filename)
     return rec
 
-#牡蛎随机发送
-@sv.on_keyword('亚达','yada')
+#亚达随机发送
+@sv.on_keyword('亚达','yada','鸭蛋','鸭达')
 async def yada(bot,ev) -> MessageSegment:
     file = get_yada_folder()
     try:
