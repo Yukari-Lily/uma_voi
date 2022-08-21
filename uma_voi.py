@@ -13,6 +13,13 @@ def get_yada_folder():
     filename = random.choice(files)
     rec = R.get('uma_voi/yada',filename)
     return rec
+
+koba_folder = R.get('uma_voi/koba/').path
+def get_koba_folder():
+    files = os.listdir(koba_folder)
+    filename = random.choice(files)
+    rec = R.get('uma_voi/koba',filename)
+    return rec
    
 muli_folder = R.get('uma_voi/muli/').path
 def get_muli_folder():
@@ -546,6 +553,13 @@ def get_1077_folder():
     rec = R.get('uma_voi/voi/1077成田路/',filename)
     return rec
 
+voi_1098_folder = R.get('uma_voi/voi/1098小林历奇/').path
+def get_1098_folder():
+    files = os.listdir(voi_1098_folder)
+    filename = random.choice(files)
+    rec = R.get('uma_voi/voi/1098小林历奇/',filename)
+    return rec
+
 voi_2001_folder = R.get('uma_voi/voi/2001快乐米可/').path
 def get_2001_folder():
     files = os.listdir(voi_2001_folder)
@@ -563,6 +577,15 @@ async def yada(bot,ev) -> MessageSegment:
     except CQHttpError:
         sv.logger.erro("发送失败喵")
 
+#口八随机发送
+@sv.on_keyword('口八','koba')
+async def koba(bot,ev) -> MessageSegment:
+    file = get_koba_folder()
+    try:
+        rec = MessageSegment.record(f'file:///{os.path.abspath(file.path)}')
+        await bot.send(ev,rec)
+    except CQHttpError:
+        sv.logger.erro("发送失败喵")
 
 #牡蛎随机发送
 @sv.on_fullmatch('牡蛎')
@@ -665,6 +688,16 @@ async def muli(bot,ev) -> MessageSegment:
     except CQHttpError:
         sv.logger.erro("发送失败喵")
 
+#空中神宫1036
+@sv.on_fullmatch('牡蛎神宫','神宫牡蛎')
+async def muli(bot,ev) -> MessageSegment:
+    muli_36 = R.get('uma_voi/muli/snd_voi_race_103600_8 -.wav')
+    try:
+        rec = MessageSegment.record(f'file:///{os.path.abspath(muli_36.path)}')
+        await bot.send(ev,rec)
+    except CQHttpError:
+        sv.logger.erro("发送失败喵")
+
 #荣进闪耀1037
 @sv.on_fullmatch('牡蛎阿荣','阿荣牡蛎')
 async def muli(bot,ev) -> MessageSegment:
@@ -741,6 +774,16 @@ async def muli(bot,ev) -> MessageSegment:
     muli_51 = R.get('uma_voi/muli/snd_voi_race_105100_8 -.wav')
     try:
         rec = MessageSegment.record(f'file:///{os.path.abspath(muli_51.path)}')
+        await bot.send(ev,rec)
+    except CQHttpError:
+        sv.logger.erro("发送失败喵")
+
+#青竹回忆1053
+@sv.on_fullmatch('牡蛎青竹','青竹牡蛎')
+async def muli(bot,ev) -> MessageSegment:
+    muli_53 = R.get('uma_voi/muli/snd_voi_race_105300_8 -.wav')
+    try:
+        rec = MessageSegment.record(f'file:///{os.path.abspath(muli_53.path)}')
         await bot.send(ev,rec)
     except CQHttpError:
         sv.logger.erro("发送失败喵")
@@ -841,6 +884,16 @@ async def muli(bot,ev) -> MessageSegment:
     muli_74 = R.get('uma_voi/muli/snd_voi_race_107400_8 -.wav')
     try:
         rec = MessageSegment.record(f'file:///{os.path.abspath(muli_74.path)}')
+        await bot.send(ev,rec)
+    except CQHttpError:
+        sv.logger.erro("发送失败喵")
+
+#小林历奇1098
+@sv.on_fullmatch('牡蛎小林','小林牡蛎')
+async def muli(bot,ev) -> MessageSegment:
+    muli_98 = R.get('uma_voi/muli/snd_voi_race_109800_8 -.wav')
+    try:
+        rec = MessageSegment.record(f'file:///{os.path.abspath(muli_98.path)}')
         await bot.send(ev,rec)
     except CQHttpError:
         sv.logger.erro("发送失败喵")
@@ -1444,6 +1497,14 @@ async def voisend(bot,ev) -> MessageSegment:
         await bot.send(ev,rec)
     except CQHttpError:
         sv.logger.erro("发送失败喵")
+
+@sv.on_keyword("小林", "历奇")
+async def voisend(bot,ev) -> MessageSegment:
+    try:
+        rec = MessageSegment.record(f'file:///{os.path.abspath(get_1098_folder().path)}')
+        await bot.send(ev,rec)
+    except CQHttpError:
+        sv.logger.erro("发送失败喵")       
 
 @sv.on_keyword("米可", "快乐温顺", "快乐米可", "happy milk", "嗨皮米可")
 async def voisend(bot,ev) -> MessageSegment:
