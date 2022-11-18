@@ -1513,3 +1513,4 @@ async def voisend(bot,ev) -> MessageSegment:
         await bot.send(ev,rec)
     except CQHttpError:
         sv.logger.erro("发送失败喵")
+        
